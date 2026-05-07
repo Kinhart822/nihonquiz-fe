@@ -1,13 +1,11 @@
 import { AnimatePresence, motion } from 'framer-motion';
 import { useState, type ChangeEvent, type FormEvent } from 'react';
-import { useTranslation } from 'react-i18next';
 import { HiCheck } from 'react-icons/hi2';
 import { Link } from 'react-router-dom';
 import Layout from '../components/Layout';
 import { topics } from '../constants/topics';
 
 const HomePage = () => {
-  const { t } = useTranslation();
   const [language, setLanguage] = useState('JLPT N5');
   const [difficulty, setDifficulty] = useState('beginner');
   const [selectedTopics, setSelectedTopics] = useState<string[]>([
@@ -19,7 +17,6 @@ const HomePage = () => {
   const handleLanguageSelect = (e: ChangeEvent<HTMLSelectElement>) => {
     const newLang = e.target.value;
     setLanguage(newLang);
-    // Reset selected topics if they don't exist in the new language (though they are all the same for now)
     setSelectedTopics(['vocabulary']);
   };
 
@@ -52,6 +49,12 @@ const HomePage = () => {
     visible: { y: 0, opacity: 1 },
   };
 
+  const topicLabels: Record<string, string> = {
+    vocabulary: 'Từ vựng (語彙)',
+    grammar: 'Ngữ pháp (文法)',
+    kanji: 'Hán tự (漢字)',
+  };
+
   return (
     <Layout className="pb-20 px-6">
       <motion.div
@@ -60,20 +63,21 @@ const HomePage = () => {
         animate="visible"
         className="relative z-10 w-full max-w-7xl mx-auto"
       >
-        {/* HERO SECTION */}
-        <div className="text-center mb-16">
+        {/* HERO SECTION (OUTSIDE THE TABLE) */}
+        <div className="text-left mb-16 mt-12 px-4 md:px-0">
           <motion.h1
             variants={itemVariants}
-            className="text-6xl md:text-8xl font-black tracking-tight text-white mb-4"
+            className="text-5xl md:text-7xl font-black tracking-tight text-white mb-6"
           >
             Nihon<span className="text-rose-600 font-serif">Quiz</span>
           </motion.h1>
           <motion.p
             variants={itemVariants}
-            className="text-lg md:text-xl text-slate-400 max-w-xl mx-auto font-light"
+            className="text-xl md:text-2xl text-slate-400 font-light max-w-2xl leading-relaxed"
           >
-            {t('subtitle')}
-            <span className="text-slate-500 italic block mt-1">
+            Chinh phục tiếng Nhật với các bài trắc nghiệm cá nhân hóa được tạo
+            bởi AI.
+            <span className="text-slate-500 italic block mt-2 text-lg">
               AI クイズ ジェネレーター
             </span>
           </motion.p>
@@ -95,7 +99,7 @@ const HomePage = () => {
                       htmlFor="level-select"
                       className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
                     >
-                      {t('level')}
+                      Cấp độ • レベル
                     </label>
                     <div className="relative">
                       <select
@@ -119,7 +123,7 @@ const HomePage = () => {
                       htmlFor="difficulty-select"
                       className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
                     >
-                      {t('difficulty')}
+                      Độ khó • 難易度
                     </label>
                     <div className="relative">
                       <select
@@ -128,15 +132,9 @@ const HomePage = () => {
                         onChange={(e) => setDifficulty(e.target.value)}
                         className="quiz-select"
                       >
-                        <option value="beginner">
-                          {t('difficulty_options.beginner')}
-                        </option>
-                        <option value="intermediate">
-                          {t('difficulty_options.intermediate')}
-                        </option>
-                        <option value="advanced">
-                          {t('difficulty_options.advanced')}
-                        </option>
+                        <option value="beginner">Sơ cấp</option>
+                        <option value="intermediate">Trung cấp</option>
+                        <option value="advanced">Cao cấp</option>
                       </select>
                     </div>
                   </div>
@@ -148,7 +146,7 @@ const HomePage = () => {
                     htmlFor="num-questions-select"
                     className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
                   >
-                    {t('num_questions')}
+                    Số câu hỏi • 問題数
                   </label>
                   <div className="relative">
                     <select
@@ -159,7 +157,7 @@ const HomePage = () => {
                     >
                       {[5, 10, 15, 20].map((num) => (
                         <option value={num} key={num}>
-                          {t('questions_count', { count: num })}
+                          {num} câu hỏi
                         </option>
                       ))}
                     </select>
@@ -170,10 +168,10 @@ const HomePage = () => {
                 <div className="group space-y-4">
                   <div className="flex items-center justify-between">
                     <label className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors">
-                      {t('topic')}
+                      Chủ đề • トピック
                     </label>
                     <span className="text-sm text-slate-600 uppercase tracking-widest font-medium">
-                      {t('topics_select_hint')}
+                      Chọn một hoặc nhiều chủ đề
                     </span>
                   </div>
                   <div className="flex flex-wrap gap-2.5">
@@ -201,7 +199,7 @@ const HomePage = () => {
                               </motion.div>
                             )}
                           </AnimatePresence>
-                          {t(`topic_options.${topicKey}`)}
+                          {topicLabels[topicKey]}
                         </button>
                       );
                     })}
@@ -215,14 +213,14 @@ const HomePage = () => {
                   htmlFor="prompt-input"
                   className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
                 >
-                  {t('custom_prompt_label')}
+                  Yêu cầu tùy chỉnh • カスタm指示
                 </label>
                 <div className="relative h-[300px] lg:flex-1 lg:min-h-[300px]">
                   <textarea
                     id="prompt-input"
                     value={customPrompt}
                     onChange={(e) => setCustomPrompt(e.target.value)}
-                    placeholder={t('custom_prompt_placeholder')}
+                    placeholder="Nhập yêu cầu tùy chỉnh của bạn tại đây..."
                     className="absolute inset-0 w-full h-full bg-white/5 border border-white/10 text-slate-200 rounded-3xl py-6 px-8 outline-none focus:border-rose-500/50 focus:ring-1 focus:ring-rose-500/30 transition-all resize-none text-lg placeholder:text-slate-600 font-medium leading-relaxed"
                   />
                 </div>
@@ -237,7 +235,7 @@ const HomePage = () => {
                 className="q-button w-full md:w-auto md:min-w-[320px]"
                 to={`/quiz?language=${language}&difficulty=${difficulty.toLowerCase()}&topic=${selectedTopics.join(',')}&numQuestions=${numQuestions}&prompt=${encodeURIComponent(customPrompt)}`}
               >
-                {t('start_session')}
+                Bắt đầu học ngay
               </Link>
             </motion.div>
           </form>

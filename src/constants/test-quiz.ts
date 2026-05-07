@@ -1,34 +1,35 @@
 export const testQuiz = [
   {
-    query: 'What is the correct reading for the Kanji "水"?',
+    query: 'Cách đọc đúng của chữ Kanji "水" là gì?',
     choices: ['Mizu', 'Hi', 'Ki', 'Kaze'],
     answer: '0',
-    explanation: 'The Kanji "水" (mizu) means "water" in Japanese.',
+    explanation: 'Chữ Kanji "水" (mizu) có nghĩa là "nước" trong tiếng Nhật.',
   },
   {
-    query: 'Which particle is used to mark the topic of a sentence?',
+    query: 'Trợ từ nào được dùng để đánh dấu chủ đề của câu?',
     choices: ['を (wo)', 'で (de)', 'は (wa)', 'に (ni)'],
     answer: '2',
     explanation:
-      'The particle "は" (wa) is used to mark the topic of a sentence. For example, "わたしは" (As for me).',
+      'Trợ từ "は" (wa) được dùng để đánh dấu chủ đề của câu. Ví dụ: "わたしは" (Đối với tôi/Tôi là...).',
   },
   {
-    query: 'What does the word "食べる" (taberu) mean?',
-    choices: ['To drink', 'To sleep', 'To read', 'To eat'],
+    query: 'Từ "食べる" (taberu) có nghĩa là gì?',
+    choices: ['Uống', 'Ngủ', 'Đọc', 'Ăn'],
     answer: '3',
-    explanation: '"食べる" (taberu) is a verb that means "to eat".',
+    explanation: '"食べる" (taberu) là một động từ có nghĩa là "ăn".',
   },
   {
-    query: 'Which of the following is written in Katakana?',
+    query: 'Từ nào sau đây được viết bằng Katakana?',
     choices: ['こんにちは', 'テレビ', '学校', 'ありがとう'],
     answer: '1',
     explanation:
-      '"テレビ" (terebi - TV) is written in Katakana, which is used for foreign loanwords. The others are Hiragana and Kanji.',
+      '"テレビ" (terebi - TV) được viết bằng Katakana, hệ chữ dùng cho các từ mượn nước ngoài. Các từ còn lại là Hiragana và Kanji.',
   },
   {
-    query: 'How do you say "Thank you" in Japanese?',
+    query: 'Làm thế nào để nói "Cảm ơn" trong tiếng Nhật?',
     choices: ['Sumimasen', 'Arigatou', 'Sayounara', 'Konnichiwa'],
     answer: '1',
-    explanation: '"Arigatou" (ありがとう) means "Thank you" in Japanese.',
+    explanation:
+      '"Arigatou" (ありがとう) có nghĩa là "Cảm ơn" trong tiếng Nhật.',
   },
 ];

@@ -1,8 +1,7 @@
-import { useEffect, useState } from 'react';
-import { HiCheck, HiOutlineXMark } from 'react-icons/hi2';
 import { motion, AnimatePresence } from 'framer-motion';
+import { HiCheck, HiOutlineXMark } from 'react-icons/hi2';
 
-interface QuestionType {
+export interface QuestionType {
   query: string;
   choices: string[];
   answer: string | number;
@@ -12,67 +11,37 @@ interface QuestionType {
 interface QuestionProps {
   question: QuestionType;
   id: number;
-  setNumSubmitted: React.Dispatch<React.SetStateAction<number>>;
-  setNumCorrect: React.Dispatch<React.SetStateAction<number>>;
+  selectedChoiceIndex: number | null;
+  onSelectChoice: (index: number) => void;
+  isSubmitted: boolean;
+  showResults?: boolean;
 }
 
 const Question: React.FC<QuestionProps> = ({
   question,
   id,
-  setNumSubmitted,
-  setNumCorrect,
+  selectedChoiceIndex,
+  onSelectChoice,
+  isSubmitted,
+  showResults = false,
 }) => {
   const { query, choices, answer, explanation } = question;
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [isExplained, setIsExplained] = useState(false);
-  const [isSelected, setIsSelected] = useState(false);
-  const [selectedChoiceIndex, setSelectedChoiceIndex] = useState(-1);
-  const [choiceObjects, setChoiceObjects] = useState(() =>
-    choices.map((choice) => ({
-      text: choice,
-      isSelected: false,
-    })),
-  );
 
   const isCorrect = () => {
     return Number(answer) === selectedChoiceIndex;
   };
 
-  const handleChoiceSelect = (choiceIndex) => {
-    if (isSubmitted) return;
-
-    setSelectedChoiceIndex(choiceIndex);
-    setIsSelected(true);
-
-    setChoiceObjects((prevChoiceObjects) =>
-      prevChoiceObjects.map((choice, index) => ({
-        ...choice,
-        isSelected: choiceIndex === index,
-      })),
-    );
-  };
-
-  const handleAnswerSubmit = () => {
-    if (isSubmitted || !isSelected) return;
-    setIsSubmitted(true);
-    setNumSubmitted((prev) => prev + 1);
-    if (isCorrect()) {
-      setNumCorrect((prev) => prev + 1);
-      setIsExplained(true);
-    }
-  };
-
   const renderChoices = () => {
-    return choiceObjects?.map((choice, index) => {
+    return choices.map((choice, index) => {
       let statusStyle =
         'border-white/10 bg-white/5 hover:bg-white/10 hover:border-white/20';
       let icon: any = null;
 
-      if (choice.isSelected) {
+      if (selectedChoiceIndex === index) {
         statusStyle = 'border-rose-500/50 bg-rose-500/10 text-white';
       }
 
-      if (isSubmitted) {
+      if (isSubmitted && showResults) {
         if (index === selectedChoiceIndex) {
           if (isCorrect()) {
             statusStyle =
@@ -83,13 +52,12 @@ const Question: React.FC<QuestionProps> = ({
               'border-rose-500/50 bg-rose-500/10 text-rose-400 shadow-[0_0_15px_rgba(225,29,72,0.2)]';
             icon = <HiOutlineXMark className="text-rose-500 text-xl" />;
           }
+        } else if (index === Number(answer)) {
+          // Show correct answer if user got it wrong
+          statusStyle =
+            'border-emerald-500/50 bg-emerald-500/10 text-emerald-400 opacity-60';
+          icon = <HiCheck className="text-emerald-500 text-xl" />;
         }
-      }
-
-      if (isExplained && index === Number(answer)) {
-        statusStyle =
-          'border-emerald-500/50 bg-emerald-500/10 text-emerald-400 shadow-[0_0_15px_rgba(16,185,129,0.2)]';
-        icon = <HiCheck className="text-emerald-500 text-xl" />;
       }
 
       return (
@@ -97,9 +65,9 @@ const Question: React.FC<QuestionProps> = ({
           key={index}
           disabled={isSubmitted}
           className={`w-full p-5 text-left rounded-2xl border transition-all duration-300 flex items-center justify-between group ${statusStyle}`}
-          onClick={() => handleChoiceSelect(index)}
+          onClick={() => onSelectChoice(index)}
         >
-          <span className="font-medium">{choice.text}</span>
+          <span className="text-xl font-bold">{choice}</span>
           <AnimatePresence>
             {icon && (
               <motion.div
@@ -116,30 +84,20 @@ const Question: React.FC<QuestionProps> = ({
     });
   };
 
-  useEffect(() => {
-    setChoiceObjects(
-      choices.map((choice) => ({
-        text: choice,
-        isSelected: false,
-      })),
-    );
-  }, [choices]);
-
   return (
     <div className="glass-card rounded-3xl p-8 md:p-10 border-white/5 relative overflow-hidden group">
-      {/* Decorative inner glow */}
       <div className="absolute -top-24 -right-24 w-48 h-48 bg-rose-600/5 rounded-full blur-3xl group-hover:bg-rose-600/10 transition-colors duration-500" />
 
       <div className="relative z-10">
         <header className="flex items-center justify-between mb-8">
-          <span className="text-[10px] font-bold uppercase tracking-[0.3em] text-slate-500">
-            Quest {id + 1}
+          <span className="text-[18px] font-bold uppercase tracking-[0.3em] text-slate-500">
+            Câu hỏi {id + 1}
           </span>
-          {isSubmitted && (
+          {isSubmitted && showResults && (
             <span
-              className={`text-[10px] font-bold uppercase tracking-[0.2em] ${isCorrect() ? 'text-emerald-500' : 'text-rose-500'}`}
+              className={`text-[16px] font-bold uppercase tracking-[0.2em] ${isCorrect() ? 'text-emerald-500' : 'text-rose-500'}`}
             >
-              {isCorrect() ? 'Excellent' : 'Not quite'}
+              {isCorrect() ? 'Chính xác' : 'Chưa chính xác'}
             </span>
           )}
         </header>
@@ -148,38 +106,10 @@ const Question: React.FC<QuestionProps> = ({
           {query}
         </h2>
 
-        <div className="grid gap-4 mb-10">{renderChoices()}</div>
-
-        <footer className="flex flex-col md:flex-row items-center justify-between gap-6 pt-6 border-t border-white/5">
-          <div className="flex items-center gap-4">
-            {isSubmitted && (
-              <button
-                onClick={() => setIsExplained(true)}
-                disabled={isExplained}
-                className={`text-sm font-bold uppercase tracking-widest text-slate-400 hover:text-white transition-colors ${isExplained ? 'opacity-0 pointer-events-none' : ''}`}
-              >
-                Reveal Insight
-              </button>
-            )}
-          </div>
-
-          <button
-            onClick={handleAnswerSubmit}
-            disabled={isSubmitted || !isSelected}
-            className={`px-10 py-4 rounded-xl font-bold text-sm uppercase tracking-widest transition-all duration-300 ${
-              isSubmitted
-                ? 'bg-white/5 text-slate-500 cursor-default'
-                : isSelected
-                  ? 'bg-rose-600 text-white shadow-[0_0_20px_rgba(225,29,72,0.4)] hover:scale-105 active:scale-95'
-                  : 'bg-white/5 text-slate-600 cursor-not-allowed'
-            }`}
-          >
-            {isSubmitted ? 'Locked In' : 'Confirm Selection'}
-          </button>
-        </footer>
+        <div className="grid gap-4 mb-0">{renderChoices()}</div>
 
         <AnimatePresence>
-          {((isSubmitted && isCorrect()) || isExplained) && (
+          {isSubmitted && showResults && (
             <motion.div
               initial={{ opacity: 0, height: 0 }}
               animate={{ opacity: 1, height: 'auto' }}
@@ -190,10 +120,10 @@ const Question: React.FC<QuestionProps> = ({
                   <div className="w-2 h-2 rounded-full bg-rose-600 shadow-[0_0_10px_rgba(225,29,72,0.8)]" />
                 </div>
                 <div>
-                  <h3 className="text-xs font-bold uppercase tracking-[0.2em] text-rose-500 mb-2">
-                    Zen Insight
+                  <h3 className="text-sm font-bold uppercase tracking-[0.2em] text-rose-500 mb-3">
+                    Giải thích chi tiết
                   </h3>
-                  <p className="text-slate-300 leading-relaxed font-light">
+                  <p className="text-xl text-slate-300 leading-relaxed font-medium">
                     {explanation}
                   </p>
                 </div>

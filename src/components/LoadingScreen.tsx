@@ -1,10 +1,8 @@
 import Facts from './Facts';
 import { Bars } from 'react-loader-spinner';
 import { motion } from 'framer-motion';
-import { useTranslation } from 'react-i18next';
 
 const LoadingScreen = ({ responseStream }: { responseStream: string }) => {
-  const { t } = useTranslation();
   return (
     <div className="relative min-h-screen flex items-center justify-center overflow-hidden bg-[#0c0c0e]">
       {/* Background Stream Text (Decorative) */}
@@ -36,13 +34,10 @@ const LoadingScreen = ({ responseStream }: { responseStream: string }) => {
 
           <div className="text-center space-y-4">
             <h2 className="text-4xl md:text-5xl font-black tracking-tight text-white uppercase animate-pulse">
-              {t('generating_title_part1')}{' '}
-              <span className="text-rose-600">
-                {t('generating_title_part2')}
-              </span>
+              Đang khởi tạo <span className="text-rose-600">Câu hỏi</span>
             </h2>
             <p className="text-slate-500 font-medium tracking-[0.2em] text-xs uppercase">
-              {t('loading_subtext')}
+              Được biên soạn bởi AI • Quá trình này mất khoảng 20-30 giây
             </p>
           </div>
         </div>
