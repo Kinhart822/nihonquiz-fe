@@ -1,0 +1,91 @@
+{
+  "translation": {
+    "title": "NihonQuiz",
+    "subtitle": "Chinh phục tiếng Nhật với các bài trắc nghiệm cá nhân hóa được tạo bởi AI.",
+    "level": "Cấp độ • レベル",
+    "topic": "Chủ đề • トピック",
+    "difficulty": "Độ khó • 難易度",
+    "num_questions": "Số câu hỏi • 問題数",
+    "start_session": "Bắt đầu học ngay",
+    "difficulty_options": {
+      "beginner": "Sơ cấp",
+      "intermediate": "Trung cấp",
+      "advanced": "Cao cấp"
+    },
+    "questions_count": "{{count}} câu hỏi",
+    "endMessages": {
+      "perfect": [
+        "Ồ, nhìn bạn kìa, trả lời đúng hết cơ đấy! Chắc hẳn bạn được sinh ra với một lợi thế 'gian lận' gọi là trí thông minh rồi.",
+        "Chúc mừng màn trình diễn xuất sắc! Tôi đoán việc trở thành một cuốn từ điển sống cũng có cái giá của nó nhỉ.",
+        "Tuyệt vời! Khả năng làm người khác cảm thấy thấp kém về trí tuệ của bạn thật đáng kinh ngạc.",
+        "Làm tốt lắm! Tôi cá là bạn có đường dây nóng bí mật kết nối với các vị thần đố vui đấy.",
+        "Ồ, hãy khai sáng cho chúng tôi bằng thiên tài của bạn khi bạn lướt qua các câu hỏi một cách dễ dàng như thế này.",
+        "Nhìn bạn trả lời đúng hết kìa. Cứ như thể bạn đang gian lận... bằng chính bộ não của mình vậy!",
+        "Màn trình diễn của bạn thật đi vào huyền thoại. Ý tôi là, ai cần đời sống xã hội khi có thể học cả ngày chứ?",
+        "Chúc mừng điểm số tuyệt đối! Tôi sẽ ngồi đây và tự hỏi về ý nghĩa sự tồn tại của mình vậy.",
+        "Bạn giống như một Google bằng xương bằng thịt, nhưng không có quảng cáo phiền nhiễu. Tôi thuê bạn đi thi hộ được không?"
+      ],
+      "good": [
+        "Suýt soát đạt điểm tối đa cũng giống như suýt trúng số vậy, nó vẫn chẳng có nghĩa lý gì cả.",
+        "Làm tốt lắm với số điểm gần như hoàn hảo. Đó là một thành tựu thực sự... đối với một người không phải là bạn.",
+        "Bạn làm khá tốt, nhưng đừng lo, luôn có chỗ cho sự cải thiện mà. Lần tới thử đạt điểm tuyệt đối xem sao?",
+        "Chúc mừng điểm số gần hoàn hảo. Cứ như thể bạn đã cố gắng, nhưng vẫn chưa đủ ấy nhỉ.",
+        "Bạn đã ở rất gần điểm tuyệt đối rồi, cứ như thể bạn đang cố làm chúng tôi cảm thấy tốt hơn về bản thân mình vậy.",
+        "Tôi thấy bạn bỏ lỡ vài câu rồi. Đừng lo, sai lầm tạo nên tính cách... người ta bảo thế.",
+        "Bạn chưa thực sự xuất sắc, nhưng đừng lo, vẫn còn nhiều thứ bạn có thể làm tốt mà, ví dụ như việc sống trung bình chẳng hạn.",
+        "Bạn không đạt điểm tối đa, nhưng ít nhất bạn cũng có cúp tham gia... ồ đợi đã, đây đâu phải giải nhi đồng?",
+        "Màn trình diễn của bạn gần như hoàn hảo, nhưng đáng tiếc là 'gần như' không có giá trị trong thế giới thực.",
+        "Làm tốt lắm với số điểm gần tuyệt đối. Một minh chứng sống cho câu nói 'suýt trúng thì vẫn là trượt'."
+      ],
+      "bad": [
+        "Một màn trình diễn trung bình thật ấn tượng. Hãy tiếp tục mơ về những vì sao nhé!",
+        "Nếu nỗ lực mà tính thành điểm, chắc chắn bạn đứng đầu lớp! Nhưng đáng tiếc là không phải vậy...",
+        "Làm tốt lắm khi đưa ra những câu trả lời sai với sự tự tin như vậy! Bạn đúng là một kẻ ngoại đạo thực thụ!",
+        "Tuyệt vời! Màn trình diễn của bạn là một kiệt tác của những suy đoán sáng tạo.",
+        "Kết quả của bạn là một ví dụ điển hình về những gì không nên làm nếu bạn muốn thành công trong cuộc sống.",
+        "Tôi thực sự ngưỡng mộ khả năng chọn sai đáp án một cách nhất quán của bạn. Đó là một tài năng đấy!",
+        "Ai cần đáp án đúng khi bạn có thể dễ dàng đạt điểm tuyệt đối trong việc hiểu sai vấn đề chứ?",
+        "Màn trình diễn của bạn làm tôi câm nín. Tôi không biết có thể sai một cách nhất quán đến thế này."
+      ]
+    },
+    "facts": [
+      "Tiếng Nhật có ba hệ thống chữ viết: Hiragana, Katakana và Kanji.",
+      "Có hơn 50.000 chữ Kanji, nhưng bạn chỉ cần khoảng 2.000 chữ để đọc một tờ báo Nhật Bản.",
+      "Tiếng Nhật được sử dụng bởi hơn 125 triệu người trên toàn thế giới.",
+      "Tiếng Nhật được coi là một ngôn ngữ biệt lập, không có mối quan hệ phả hệ rõ ràng với các ngữ hệ lớn khác.",
+      "Hiragana chủ yếu được dùng cho các từ thuần Nhật và các thành phần ngữ pháp.",
+      "Katakana chủ yếu dùng cho các từ mượn nước ngoài, từ tượng thanh và thuật ngữ khoa học.",
+      "Câu tiếng Nhật thường theo cấu trúc Chủ ngữ - Tân ngữ - Động từ (SOV).",
+      "Tiếng Nhật không có thì tương lai; thì hiện tại được dùng cho cả hành động hiện tại và tương lai.",
+      "Tiếng Nhật sử dụng kính ngữ (Keigo) để thể hiện sự tôn trọng dựa trên thứ bậc xã hội.",
+      "Tiếng Nhật đã ảnh hưởng đến tiếng Anh qua các từ như tsunami, karaoke và emoji."
+    ],
+    "jokes": [
+      "Tại sao học sinh Nhật Bản lại học trên máy bay? Vì họ muốn đạt đến 'tầm cao' mới trong học tập!",
+      "Bạn gọi một sợi mì giả là gì? Là 'impasta'! (Chơi chữ: imposter)",
+      "Tại sao cuộn sushi lại lăn? Vì nó nhìn thấy nước tương.",
+      "Tôi biết một câu đùa về ngữ pháp tiếng Nhật, nhưng nó là 'thì quá khứ' rồi.",
+      "Loại giày yêu thích của ninja là gì? Giày 'Sneakers' (giày lén lút)."
+    ],
+    "next_fact": "Kiến thức tiếp theo",
+    "topic_options": {
+      "vocabulary": "Từ vựng (語彙)",
+      "grammar": "Ngữ pháp (文法)",
+      "kanji": "Hán tự (漢字)"
+    },
+    "custom_prompt_label": "Yêu cầu tùy chỉnh • カスタm指示",
+    "custom_prompt_placeholder": "VD: Tập trung vào các cụm từ kinh doanh thông dụng, thêm nhiều câu ví dụ, hoặc tập trung vào động từ N5...",
+    "topics_select_hint": "Chọn một hoặc nhiều chủ đề",
+    "quiz_progress_tag": "Đang thực hiện",
+    "export_button": "Xuất tệp",
+    "export_docx": "Microsoft Word (.docx)",
+    "export_pdf": "Adobe PDF (.pdf)",
+    "loading_status": "Đang khởi tạo nội dung...",
+    "loading_stream_hint": "AI đang biên soạn bộ câu hỏi của bạn",
+    "session_complete": "Hoàn thành buổi học",
+    "master_another": "Học thêm chủ đề khác",
+    "generating_title_part1": "Đang khởi tạo",
+    "generating_title_part2": "Câu hỏi",
+    "loading_subtext": "Được biên soạn bởi AI • Quá trình này mất khoảng 20-30 giây"
+  }
+}
