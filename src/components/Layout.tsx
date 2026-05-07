@@ -77,11 +77,11 @@ const Layout = ({ children, className = '', showGrid = true }: LayoutProps) => {
       <footer className="relative z-10 py-12 mt-auto">
         <div className="max-w-7xl mx-auto px-8 flex flex-col md:flex-row justify-between items-center gap-6">
           <div className="flex items-center gap-4">
-            <span className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-600">
+            <span className="text-xs font-bold uppercase tracking-[0.4em] text-slate-600">
               Created By Kinhart822
             </span>
           </div>
-          <div className="text-[10px] font-bold uppercase tracking-[0.4em] text-slate-600">
+          <div className="text-xs font-bold uppercase tracking-[0.4em] text-slate-600">
             © 2026 NihonQuiz • AI Powered
           </div>
         </div>

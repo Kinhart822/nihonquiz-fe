@@ -93,7 +93,7 @@ const HomePage = () => {
                   <div className="group space-y-3">
                     <label
                       htmlFor="level-select"
-                      className="block text-xs font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
+                      className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
                     >
                       {t('level')}
                     </label>
@@ -117,7 +117,7 @@ const HomePage = () => {
                   <div className="group space-y-3">
                     <label
                       htmlFor="difficulty-select"
-                      className="block text-xs font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
+                      className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
                     >
                       {t('difficulty')}
                     </label>
@@ -146,7 +146,7 @@ const HomePage = () => {
                 <div className="group space-y-3">
                   <label
                     htmlFor="num-questions-select"
-                    className="block text-xs font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
+                    className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
                   >
                     {t('num_questions')}
                   </label>
@@ -169,10 +169,10 @@ const HomePage = () => {
                 {/* TOPICS (MULTI-SELECT CHIPS) */}
                 <div className="group space-y-4">
                   <div className="flex items-center justify-between">
-                    <label className="block text-xs font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors">
+                    <label className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors">
                       {t('topic')}
                     </label>
-                    <span className="text-[10px] text-slate-600 uppercase tracking-widest font-medium">
+                    <span className="text-sm text-slate-600 uppercase tracking-widest font-medium">
                       {t('topics_select_hint')}
                     </span>
                   </div>
@@ -184,7 +184,7 @@ const HomePage = () => {
                           key={topicKey}
                           type="button"
                           onClick={() => toggleTopic(topicKey)}
-                          className={`flex items-center gap-2 px-4 py-2 rounded-xl border font-bold text-xs transition-all duration-300 ${
+                          className={`flex items-center gap-2 px-4 py-2 rounded-xl border font-bold text-lg transition-all duration-300 ${
                             isSelected
                               ? 'bg-rose-600/20 border-rose-600 text-white shadow-[0_0_15px_rgba(225,29,72,0.2)]'
                               : 'bg-white/5 border-white/10 text-slate-400 hover:border-white/20 hover:bg-white/10'
@@ -213,7 +213,7 @@ const HomePage = () => {
               <div className="flex-1 flex flex-col group space-y-3">
                 <label
                   htmlFor="prompt-input"
-                  className="block text-xs font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
+                  className="block text-lg font-bold uppercase tracking-[0.3em] text-slate-500 group-focus-within:text-rose-500 transition-colors"
                 >
                   {t('custom_prompt_label')}
                 </label>
@@ -223,7 +223,7 @@ const HomePage = () => {
                     value={customPrompt}
                     onChange={(e) => setCustomPrompt(e.target.value)}
                     placeholder={t('custom_prompt_placeholder')}
-                    className="absolute inset-0 w-full h-full bg-white/5 border border-white/10 text-slate-200 rounded-3xl py-6 px-8 outline-none focus:border-rose-500/50 focus:ring-1 focus:ring-rose-500/30 transition-all resize-none text-sm placeholder:text-slate-600 font-medium leading-relaxed"
+                    className="absolute inset-0 w-full h-full bg-white/5 border border-white/10 text-slate-200 rounded-3xl py-6 px-8 outline-none focus:border-rose-500/50 focus:ring-1 focus:ring-rose-500/30 transition-all resize-none text-lg placeholder:text-slate-600 font-medium leading-relaxed"
                   />
                 </div>
               </div>

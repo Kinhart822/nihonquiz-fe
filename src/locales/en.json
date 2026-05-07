@@ -74,7 +74,7 @@
       "kanji": "Kanji (漢字)"
     },
     "custom_prompt_label": "Custom Instructions • カスタm指示",
-    "custom_prompt_placeholder": "E.g. Focus on common business phrases, include more example sentences, or target JLPT N5 verbs...",
+    "custom_prompt_placeholder": "Input your custom instructions here...",
     "topics_select_hint": "Select one or more topics",
     "quiz_progress_tag": "Session in Progress",
     "export_button": "Export",

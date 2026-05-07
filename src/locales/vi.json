@@ -74,7 +74,7 @@
       "kanji": "Hán tự (漢字)"
     },
     "custom_prompt_label": "Yêu cầu tùy chỉnh • カスタm指示",
-    "custom_prompt_placeholder": "VD: Tập trung vào các cụm từ kinh doanh thông dụng, thêm nhiều câu ví dụ, hoặc tập trung vào động từ N5...",
+    "custom_prompt_placeholder": "Nhập yêu cầu tùy chỉnh của bạn tại đây...",
     "topics_select_hint": "Chọn một hoặc nhiều chủ đề",
     "quiz_progress_tag": "Đang thực hiện",
     "export_button": "Xuất tệp",
