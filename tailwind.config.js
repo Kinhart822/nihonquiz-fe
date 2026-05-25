@@ -1,4 +1,4 @@
-/** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} - Config updated */
 
 import forms from '@tailwindcss/forms';
 
@@ -7,19 +7,13 @@ export default {
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
   ],
+  darkMode: 'class',
   theme: {
-    
-    // colors: {
-    //   'light-emerald': 
-    // },
-    
     extend: {
-      backgroundImage: {
-        'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
-        'gradient-conic':
-          'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
+      fontFamily: {
+        sans: ['"Comic Neue"', 'sans-serif'],
+        display: ['"Baloo 2"', 'sans-serif'],
       },
-      
     },
   },
   plugins: [
