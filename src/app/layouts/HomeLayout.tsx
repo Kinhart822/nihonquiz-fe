@@ -1,11 +1,10 @@
 import { useState } from 'react';
-import { Outlet, useNavigate } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import AuthModal from '../../features/auth/components/AuthModal';
 
 export const HomeLayout = () => {
   const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
   const [authMode, setAuthMode] = useState<'login' | 'register'>('login');
-  const navigate = useNavigate();
 
   const openAuth = (mode: 'login' | 'register') => {
     setAuthMode(mode);
@@ -20,16 +19,13 @@ export const HomeLayout = () => {
           <div className="flex justify-between items-center h-20">
             <div
               className="flex items-center gap-3 group cursor-pointer"
-              onClick={() => {
-                void navigate('/');
-                window.scrollTo(0, 0);
-              }}
+              onClick={() => window.location.reload()}
             >
               <div className="bg-white p-2 rounded-xl shadow-sm border border-teal-100 group-hover:shadow-md transition-shadow">
                 <img
-                  src="/images/running-mori.png"
+                  src="/images/logo.png"
                   alt="MoriPract Logo"
-                  className="w-7 h-7 object-contain"
+                  className="w-10 h-10 object-contain"
                 />
               </div>
               <span className="font-extrabold text-2xl tracking-tight text-teal-950">

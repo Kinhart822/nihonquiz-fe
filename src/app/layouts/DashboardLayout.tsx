@@ -106,18 +106,18 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
         }`}
       >
         <div className="p-4 flex flex-col items-center justify-center gap-2 mb-4 mt-2">
-          <Link
-            to="/"
-            className="flex flex-col items-center justify-center gap-1 group"
+          <div
+            onClick={() => window.location.reload()}
+            className="flex flex-col items-center justify-center gap-1 group cursor-pointer"
           >
-            <div className="w-10 h-10 bg-teal-50 dark:bg-teal-900/40 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
+            <div className="w-12 h-12 bg-teal-50 dark:bg-teal-900/40 rounded-xl flex items-center justify-center group-hover:scale-110 transition-transform">
               <img
-                src="/images/running-mori.png"
+                src="/images/logo.png"
                 alt="MoriPract"
-                className="w-6 h-6 object-contain"
+                className="w-10 h-10 object-contain"
               />
             </div>
-          </Link>
+          </div>
           <button
             className="md:hidden p-1 hover:bg-gray-100 dark:hover:bg-slate-800 rounded mt-2 text-gray-500 dark:text-gray-400 cursor-pointer"
             onClick={toggleSidebar}
@@ -256,13 +256,16 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           >
             <Menu size={24} />
           </button>
-          <div className="flex items-center gap-2">
+          <div
+            className="flex items-center gap-2 cursor-pointer"
+            onClick={() => window.location.reload()}
+          >
             <img
-              src="/images/running-mori.png"
+              src="/images/logo.png"
               alt="MoriPract Logo"
-              className="w-6 h-6 object-contain"
+              className="w-10 h-10 object-contain"
             />
-            <span className="font-bold text-teal-900 dark:text-teal-100">
+            <span className="font-black text-lg bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-400">
               MoriPract
             </span>
           </div>

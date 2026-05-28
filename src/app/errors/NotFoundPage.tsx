@@ -12,7 +12,7 @@ const NotFoundPage: React.FC = () => {
           </div>
           <div className="absolute inset-0 flex items-center justify-center">
             <img
-              src="/images/running-mori.png"
+              src="/images/logo.png"
               alt="Mori"
               className="w-32 h-32 object-contain animate-bounce"
             />

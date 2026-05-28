@@ -6,9 +6,9 @@ export const HomeFooter = () => {
           <div className="flex items-center gap-3">
             <div className="bg-white p-2 rounded-xl shadow-sm border border-teal-100">
               <img
-                src="/images/running-mori.png"
+                src="/images/logo.png"
                 alt="MoriPract Logo"
-                className="w-6 h-6 object-contain grayscale opacity-60"
+                className="w-10 h-10 object-contain grayscale opacity-60"
               />
             </div>
             <span className="font-bold text-teal-800/60">MoriPract © 2026</span>

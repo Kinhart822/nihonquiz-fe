@@ -57,11 +57,11 @@ const AuthModal = ({
               <div className="flex items-center justify-between p-6 border-b border-gray-100">
                 <div className="flex items-center gap-2">
                   <img
-                    src="/images/running-mori.png"
+                    src="/images/logo.png"
                     alt="MoriPract Logo"
-                    className="w-8 h-8 object-contain"
+                    className="w-12 h-12 object-contain"
                   />
-                  <span className="font-extrabold text-xl tracking-tight text-gray-900">
+                  <span className="text-xl font-black bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-400">
                     MoriPract
                   </span>
                 </div>
