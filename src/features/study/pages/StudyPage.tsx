@@ -45,6 +45,18 @@ export const StudyPage: React.FC = () => {
             >
               Kanji
             </NavLink>
+            <NavLink
+              to="/study/practice"
+              className={({ isActive }) =>
+                `px-6 py-2.5 rounded-xl text-sm font-semibold transition-all duration-300 ${
+                  isActive
+                    ? 'bg-teal-500 text-white shadow-md shadow-teal-500/20 scale-100'
+                    : 'text-gray-500 dark:text-slate-400 hover:text-teal-700 dark:hover:text-teal-400 hover:bg-teal-50 dark:hover:bg-slate-800'
+                }`
+              }
+            >
+              Luyện tập
+            </NavLink>
           </div>
         </div>
 
