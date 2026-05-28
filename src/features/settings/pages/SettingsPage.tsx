@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { User, Palette, Smartphone, ChevronRight } from 'lucide-react';
-import { DashboardLayout } from '../../../app/layouts/DashboardLayout';
 import { ProfileFormModal } from '../components/ProfileFormModal';
 import { PasswordFormModal } from '../components/PasswordFormModal';
 import { useTheme } from '../../../app/hooks/useTheme';
@@ -13,7 +12,7 @@ const SettingsPage = () => {
   const { theme, toggleTheme } = useTheme();
 
   return (
-    <DashboardLayout>
+    <>
       <div className="pt-8 pb-32 px-4 max-w-2xl mx-auto min-h-full transition-colors">
         <div className="text-center mb-10">
           <h1 className="text-4xl font-black text-teal-950 dark:text-teal-100 mb-3 transition-colors">
@@ -26,7 +25,7 @@ const SettingsPage = () => {
 
         <div className="space-y-6">
           {/* User Info Block */}
-          <section className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border border-teal-50 dark:border-slate-800 shadow-sm transition-colors">
+          <section className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border-2 border- dark:border-slate-700 shadow-sm transition-colors">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-teal-100 dark:bg-teal-900/40 rounded-full flex items-center justify-center text-teal-700 dark:text-teal-400 transition-colors">
                 <User size={24} />
@@ -70,7 +69,7 @@ const SettingsPage = () => {
           </section>
 
           {/* Theme Settings Block */}
-          <section className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border border-teal-50 dark:border-slate-800 shadow-sm transition-colors">
+          <section className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border-2 border- dark:border-slate-700 shadow-sm transition-colors">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-emerald-100 dark:bg-emerald-900/30 rounded-full flex items-center justify-center text-emerald-700 dark:text-emerald-400 transition-colors">
                 <Palette size={24} />
@@ -119,7 +118,7 @@ const SettingsPage = () => {
           </section>
 
           {/* App Settings Block */}
-          <section className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border border-teal-50 dark:border-slate-800 shadow-sm transition-colors">
+          <section className="bg-white dark:bg-slate-900 p-6 rounded-[2rem] border-2 border- dark:border-slate-700 shadow-sm transition-colors">
             <div className="flex items-center gap-4 mb-6">
               <div className="w-12 h-12 bg-orange-100 dark:bg-orange-900/30 rounded-full flex items-center justify-center text-orange-700 dark:text-orange-400 transition-colors">
                 <Smartphone size={24} />
@@ -194,7 +193,7 @@ const SettingsPage = () => {
         isOpen={isPasswordOpen}
         onClose={() => setIsPasswordOpen(false)}
       />
-    </DashboardLayout>
+    </>
   );
 };
 

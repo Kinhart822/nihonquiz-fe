@@ -29,7 +29,7 @@ const NotFoundPage: React.FC = () => {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <button
             onClick={() => window.history.back()}
-            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-teal-800 font-bold rounded-xl border border-teal-100 hover:bg-teal-50 transition-colors"
+            className="inline-flex items-center justify-center gap-2 px-6 py-3 bg-white text-teal-800 font-bold rounded-xl border-2 border- hover:bg-teal-50 transition-colors"
           >
             <ArrowLeft size={18} />
             Quay lại

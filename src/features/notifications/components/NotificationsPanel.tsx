@@ -45,9 +45,9 @@ export const NotificationsPanel: React.FC<NotificationsPanelProps> = ({
             animate={{ x: 0 }}
             exit={{ x: '100%' }}
             transition={{ type: 'spring', damping: 25, stiffness: 200 }}
-            className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-slate-900 shadow-2xl z-[310] flex flex-col border-l border-teal-50 dark:border-slate-800"
+            className="fixed top-0 right-0 bottom-0 w-full max-w-sm bg-white dark:bg-slate-900 shadow-2xl z-[310] flex flex-col border-l border-teal-50 dark:border-slate-700"
           >
-            <div className="p-4 md:p-6 border-b border-teal-50 dark:border-slate-800 flex items-center justify-between">
+            <div className="p-4 md:p-6 border-b border-teal-50 dark:border-slate-700 flex items-center justify-between">
               <div className="flex items-center gap-3">
                 <div className="p-2 bg-teal-50 dark:bg-teal-900/40 rounded-xl relative">
                   <Bell
@@ -84,8 +84,8 @@ export const NotificationsPanel: React.FC<NotificationsPanelProps> = ({
                   onClick={() => onMarkAsRead(notif.id)}
                   className={`p-4 rounded-2xl transition-colors cursor-pointer border ${
                     notif.unread
-                      ? 'bg-teal-50/50 dark:bg-teal-900/20 border-teal-100 dark:border-teal-800/50'
-                      : 'bg-white dark:bg-slate-900 border-gray-100 dark:border-slate-800'
+                      ? 'bg-teal-50/50 dark:bg-teal-900/20 border-teal-200 dark:border-teal-800/50'
+                      : 'bg-white dark:bg-slate-900 border-gray-200 dark:border-slate-700'
                   } hover:border-teal-300 dark:hover:border-teal-600 group`}
                 >
                   <div className="flex gap-4">
@@ -117,7 +117,7 @@ export const NotificationsPanel: React.FC<NotificationsPanelProps> = ({
               ))}
             </div>
 
-            <div className="p-4 border-t border-teal-50 dark:border-slate-800">
+            <div className="p-4 border-t border-teal-50 dark:border-slate-700">
               <button
                 onClick={onMarkAllAsRead}
                 disabled={unreadCount === 0}

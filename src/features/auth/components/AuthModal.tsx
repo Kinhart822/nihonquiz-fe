@@ -1,18 +1,20 @@
-import { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { X, Mail, Lock, ArrowRight, Eye, EyeOff } from 'lucide-react';
+import { AnimatePresence, motion } from 'framer-motion';
+import { ArrowRight, Eye, EyeOff, Lock, Mail, X } from 'lucide-react';
+import { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 
 interface AuthModalProps {
   isOpen: boolean;
   onClose: () => void;
   defaultMode?: 'login' | 'register';
+  targetRole?: 'student' | 'teacher';
 }
 
 const AuthModal = ({
   isOpen,
   onClose,
   defaultMode = 'login',
+  targetRole = 'student',
 }: AuthModalProps) => {
   const [mode, setMode] = useState<'login' | 'register' | 'forgotPassword'>(
     defaultMode,
@@ -28,9 +30,13 @@ const AuthModal = ({
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    // Simulate login/register by navigating to vocabulary page
+    // Simulate login/register by navigating to the respective dashboard
     onClose();
-    void navigate('/dashboard');
+    if (targetRole === 'teacher') {
+      void navigate('/teacher/dashboard');
+    } else {
+      void navigate('/student/dashboard');
+    }
   };
 
   return (
@@ -54,7 +60,7 @@ const AuthModal = ({
               className="bg-white rounded-3xl w-full max-w-[600px] shadow-2xl relative overflow-hidden"
             >
               {/* Header */}
-              <div className="flex items-center justify-between p-6 border-b border-gray-100">
+              <div className="flex items-center justify-between p-6 border-b border-gray-200">
                 <div className="flex items-center gap-2">
                   <img
                     src="/images/logo.png"
@@ -104,7 +110,7 @@ const AuthModal = ({
                         type="email"
                         required
                         placeholder="you@example.com"
-                        className="w-full bg-[#F7F7F5] border border-transparent text-gray-900 rounded-xl pl-11 pr-4 py-3 outline-none focus:border-blue-500 focus:bg-white transition-all font-medium"
+                        className="w-full bg-[#F7F7F5] border-2 border- text-gray-900 rounded-xl pl-11 pr-4 py-3 outline-none focus:border-blue-500 focus:bg-white transition-all font-medium"
                       />
                     </div>
                   </div>
@@ -123,7 +129,7 @@ const AuthModal = ({
                           type={showPassword ? 'text' : 'password'}
                           required
                           placeholder="••••••••"
-                          className="w-full bg-[#F7F7F5] border border-transparent text-gray-900 rounded-xl pl-11 pr-12 py-3 outline-none focus:border-blue-500 focus:bg-white transition-all font-medium"
+                          className="w-full bg-[#F7F7F5] border-2 border- text-gray-900 rounded-xl pl-11 pr-12 py-3 outline-none focus:border-blue-500 focus:bg-white transition-all font-medium"
                         />
                         <button
                           type="button"
@@ -154,7 +160,7 @@ const AuthModal = ({
 
                   <button
                     type="submit"
-                    className="w-full py-4 bg-[#37352f] hover:bg-black text-white text-base font-bold rounded-xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-4"
+                    className="w-full py-4 bg-[#37352f] border-2 border-[#37352f] hover:bg-black hover:border-black text-white text-base font-bold rounded-xl transition-all shadow-md hover:shadow-lg hover:-translate-y-0.5 flex items-center justify-center gap-2 mt-4"
                   >
                     {mode === 'login'
                       ? 'Đăng nhập'
@@ -178,7 +184,7 @@ const AuthModal = ({
                     <div className="mt-6">
                       <button
                         type="button"
-                        className="w-full flex items-center justify-center gap-2 py-3 border border-gray-200 rounded-xl hover:bg-gray-50 transition-colors font-bold text-gray-700 text-sm"
+                        className="w-full flex items-center justify-center gap-2 py-3 border-2 border-gray-200 rounded-xl hover:bg-gray-50 hover:border-gray-300 transition-colors font-bold text-gray-700 text-sm"
                       >
                         <svg className="w-5 h-5" viewBox="0 0 24 24">
                           <path
@@ -207,30 +213,32 @@ const AuthModal = ({
               </div>
 
               {/* Footer */}
-              <div className="bg-[#F7F7F5] p-6 text-center border-t border-gray-100">
-                {mode === 'forgotPassword' ? (
-                  <button
-                    onClick={() => setMode('login')}
-                    className="text-gray-600 font-bold hover:text-gray-900"
-                  >
-                    Quay lại đăng nhập
-                  </button>
-                ) : (
-                  <p className="text-gray-600 text-sm font-medium">
-                    {mode === 'login'
-                      ? 'Chưa có tài khoản? '
-                      : 'Đã có tài khoản? '}
+              {(mode === 'forgotPassword' || targetRole !== 'teacher') && (
+                <div className="bg-[#F7F7F5] p-6 text-center border-t border-gray-200">
+                  {mode === 'forgotPassword' ? (
                     <button
-                      onClick={() =>
-                        setMode(mode === 'login' ? 'register' : 'login')
-                      }
-                      className="text-blue-600 font-bold hover:text-blue-700 underline underline-offset-2"
+                      onClick={() => setMode('login')}
+                      className="text-gray-600 font-bold hover:text-gray-900"
                     >
-                      {mode === 'login' ? 'Đăng ký ngay' : 'Đăng nhập'}
+                      Quay lại đăng nhập
                     </button>
-                  </p>
-                )}
-              </div>
+                  ) : (
+                    <p className="text-gray-600 text-sm font-medium">
+                      {mode === 'login'
+                        ? 'Chưa có tài khoản? '
+                        : 'Đã có tài khoản? '}
+                      <button
+                        onClick={() =>
+                          setMode(mode === 'login' ? 'register' : 'login')
+                        }
+                        className="text-blue-600 font-bold hover:text-blue-700 underline underline-offset-2"
+                      >
+                        {mode === 'login' ? 'Đăng ký ngay' : 'Đăng nhập'}
+                      </button>
+                    </p>
+                  )}
+                </div>
+              )}
             </motion.div>
           </motion.div>
         </>

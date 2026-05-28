@@ -66,8 +66,8 @@ export const PasswordFormModal: React.FC<PasswordFormModalProps> = ({
       />
 
       {/* Modal */}
-      <div className="relative bg-white dark:bg-slate-900 w-full max-w-md rounded-3xl shadow-2xl overflow-hidden border border-gray-100 dark:border-slate-800 flex flex-col transition-colors">
-        <div className="flex items-center justify-between p-6 border-b border-gray-100 dark:border-slate-800">
+      <div className="relative bg-white dark:bg-slate-900 w-full max-w-md rounded-3xl shadow-2xl overflow-hidden border-2 border- dark:border-slate-700 flex flex-col transition-colors">
+        <div className="flex items-center justify-between p-6 border-b border-gray-200 dark:border-slate-700">
           <h2 className="text-xl font-bold text-gray-900 dark:text-white">
             Đổi mật khẩu
           </h2>
@@ -99,7 +99,7 @@ export const PasswordFormModal: React.FC<PasswordFormModalProps> = ({
               className="space-y-5"
             >
               {error && (
-                <div className="p-3 bg-red-50 dark:bg-red-900/20 border border-red-100 dark:border-red-900/30 rounded-xl text-red-600 dark:text-red-400 text-sm font-medium animate-in slide-in-from-top-2">
+                <div className="p-3 bg-red-50 dark:bg-red-900/20 border-2 border- dark:border-red-900/30 rounded-xl text-red-600 dark:text-red-400 text-sm font-medium animate-in slide-in-from-top-2">
                   {error}
                 </div>
               )}
@@ -119,7 +119,7 @@ export const PasswordFormModal: React.FC<PasswordFormModalProps> = ({
                         currentPassword: e.target.value,
                       })
                     }
-                    className="w-full pl-4 pr-12 py-3 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 dark:focus:border-teal-500 text-gray-900 dark:text-white transition-all outline-none"
+                    className="w-full pl-4 pr-12 py-3 bg-gray-50 dark:bg-slate-800/50 border-2 border- dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 dark:focus:border-teal-500 text-gray-900 dark:text-white transition-all outline-none"
                   />
                   <button
                     type="button"
@@ -143,7 +143,7 @@ export const PasswordFormModal: React.FC<PasswordFormModalProps> = ({
                     onChange={(e) =>
                       setFormData({ ...formData, newPassword: e.target.value })
                     }
-                    className="w-full pl-4 pr-12 py-3 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 dark:focus:border-teal-500 text-gray-900 dark:text-white transition-all outline-none"
+                    className="w-full pl-4 pr-12 py-3 bg-gray-50 dark:bg-slate-800/50 border-2 border- dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 dark:focus:border-teal-500 text-gray-900 dark:text-white transition-all outline-none"
                   />
                   <button
                     type="button"
@@ -170,7 +170,7 @@ export const PasswordFormModal: React.FC<PasswordFormModalProps> = ({
                         confirmPassword: e.target.value,
                       })
                     }
-                    className="w-full pl-4 pr-12 py-3 bg-gray-50 dark:bg-slate-800/50 border border-gray-200 dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 dark:focus:border-teal-500 text-gray-900 dark:text-white transition-all outline-none"
+                    className="w-full pl-4 pr-12 py-3 bg-gray-50 dark:bg-slate-800/50 border-2 border- dark:border-slate-700 rounded-xl focus:ring-2 focus:ring-teal-500/20 focus:border-teal-500 dark:focus:border-teal-500 text-gray-900 dark:text-white transition-all outline-none"
                   />
                   <button
                     type="button"
@@ -186,7 +186,7 @@ export const PasswordFormModal: React.FC<PasswordFormModalProps> = ({
         </div>
 
         {!isSuccess && (
-          <div className="p-6 border-t border-gray-100 dark:border-slate-800 bg-gray-50 dark:bg-slate-900/50">
+          <div className="p-6 border-t border-gray-200 dark:border-slate-700 bg-gray-50 dark:bg-slate-900/50">
             <button
               form="password-form"
               type="submit"

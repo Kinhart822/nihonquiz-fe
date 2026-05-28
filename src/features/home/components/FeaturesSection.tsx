@@ -19,7 +19,7 @@ export const FeaturesSection = () => {
 
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
           {/* Feature 1 */}
-          <div className="group relative bg-white p-10 rounded-[2.5rem] border border-teal-50 shadow-sm hover:shadow-2xl hover:shadow-teal-900/10 transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-white p-10 rounded-[2.5rem] border-2 border- shadow-sm hover:shadow-2xl hover:shadow-teal-900/10 transition-all duration-300 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-teal-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
               <div className="w-16 h-16 bg-[#0D9488] text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-teal-900/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">
@@ -37,7 +37,7 @@ export const FeaturesSection = () => {
           </div>
 
           {/* Feature 2 */}
-          <div className="group relative bg-white p-10 rounded-[2.5rem] border border-teal-50 shadow-sm hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-white p-10 rounded-[2.5rem] border-2 border- shadow-sm hover:shadow-2xl hover:shadow-emerald-900/10 transition-all duration-300 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-emerald-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
               <div className="w-16 h-16 bg-[#059669] text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-emerald-900/20 group-hover:scale-110 group-hover:-rotate-3 transition-transform duration-300">
@@ -54,7 +54,7 @@ export const FeaturesSection = () => {
           </div>
 
           {/* Feature 3 */}
-          <div className="group relative bg-white p-10 rounded-[2.5rem] border border-teal-50 shadow-sm hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-300 overflow-hidden">
+          <div className="group relative bg-white p-10 rounded-[2.5rem] border-2 border- shadow-sm hover:shadow-2xl hover:shadow-orange-900/10 transition-all duration-300 overflow-hidden">
             <div className="absolute inset-0 bg-gradient-to-br from-orange-50/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
             <div className="relative z-10">
               <div className="w-16 h-16 bg-[#EA580C] text-white rounded-2xl flex items-center justify-center mb-8 shadow-lg shadow-orange-900/20 group-hover:scale-110 group-hover:rotate-3 transition-transform duration-300">

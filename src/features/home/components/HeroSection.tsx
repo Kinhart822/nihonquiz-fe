@@ -21,7 +21,7 @@ export const HeroSection = ({ onOpenAuth }: HeroSectionProps) => {
             transition={{ duration: 0.6, ease: 'easeOut' }}
             className="flex-1 text-center lg:text-left"
           >
-            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm border border-teal-100 rounded-full text-xs font-bold text-teal-700 mb-8 shadow-sm">
+            <div className="inline-flex items-center gap-2 px-4 py-2 bg-white/60 backdrop-blur-sm border-2 border- rounded-full text-xs font-bold text-teal-700 mb-8 shadow-sm">
               <Sparkles size={14} className="text-emerald-500" />
               <span className="uppercase tracking-wider">
                 Phiên bản mới 2026
@@ -48,7 +48,7 @@ export const HeroSection = ({ onOpenAuth }: HeroSectionProps) => {
               </button>
               <a
                 href="#features"
-                className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-teal-50 border border-teal-100 text-teal-900 text-lg font-bold rounded-2xl transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2"
+                className="w-full sm:w-auto px-8 py-4 bg-white hover:bg-teal-50 border-2 border- text-teal-900 text-lg font-bold rounded-2xl transition-all shadow-sm hover:shadow-md flex items-center justify-center gap-2"
               >
                 Tìm hiểu thêm
               </a>
@@ -104,14 +104,14 @@ export const HeroSection = ({ onOpenAuth }: HeroSectionProps) => {
               >
                 <div className="flex justify-between items-center mb-6">
                   <div className="flex items-center gap-3">
-                    <div className="w-8 h-5 border border-gray-200 bg-white flex items-center justify-center rounded-sm overflow-hidden flex-shrink-0">
+                    <div className="w-8 h-5 border-2 border- bg-white flex items-center justify-center rounded-sm overflow-hidden flex-shrink-0">
                       <div className="w-3 h-3 bg-red-600 rounded-full"></div>
                     </div>
                     <span className="text-sm sm:text-base font-bold text-teal-800">
                       Tiếng Nhật N4
                     </span>
                   </div>
-                  <span className="px-4 py-1.5 bg-emerald-50 text-emerald-700 text-sm sm:text-base font-bold rounded-full border border-emerald-100">
+                  <span className="px-4 py-1.5 bg-emerald-50 text-emerald-700 text-sm sm:text-base font-bold rounded-full border-2 border-">
                     Từ vựng
                   </span>
                 </div>
@@ -133,7 +133,7 @@ export const HeroSection = ({ onOpenAuth }: HeroSectionProps) => {
                   </button>
                 </div>
 
-                <div className="bg-[#F0FDFA] p-5 rounded-2xl border border-teal-50 mb-8">
+                <div className="bg-[#F0FDFA] p-5 rounded-2xl border-2 border- mb-8">
                   <p className="text-sm text-teal-700/80 font-bold uppercase tracking-wider mb-2">
                     Ý nghĩa
                   </p>
@@ -167,7 +167,7 @@ export const HeroSection = ({ onOpenAuth }: HeroSectionProps) => {
                   ease: 'easeInOut',
                   delay: 0.5,
                 }}
-                className="absolute -top-8 -left-4 sm:-top-6 sm:-left-14 bg-white p-5 rounded-2xl shadow-lg shadow-teal-900/5 border border-teal-900/5 z-30 flex items-center gap-4 hover:shadow-xl transition-shadow"
+                className="absolute -top-8 -left-4 sm:-top-6 sm:-left-14 bg-white p-5 rounded-2xl shadow-lg shadow-teal-900/5 border-2 border- z-30 flex items-center gap-4 hover:shadow-xl transition-shadow"
               >
                 <div className="w-12 h-12 bg-orange-50 rounded-xl flex items-center justify-center flex-shrink-0">
                   <Flame size={24} className="text-orange-500 animate-pulse" />
@@ -191,7 +191,7 @@ export const HeroSection = ({ onOpenAuth }: HeroSectionProps) => {
                   ease: 'easeInOut',
                   delay: 1,
                 }}
-                className="absolute -bottom-16 -right-12 sm:-bottom-20 sm:-right-24 w-72 bg-teal-950 text-white p-5 rounded-2xl shadow-xl shadow-teal-950/20 border border-teal-900/50 z-30"
+                className="absolute -bottom-16 -right-12 sm:-bottom-20 sm:-right-24 w-72 bg-teal-950 text-white p-5 rounded-2xl shadow-xl shadow-teal-950/20 border-2 border- z-30"
               >
                 <div className="flex items-center gap-2 mb-4 border-b border-white/10 pb-3">
                   <Bot size={20} className="text-[#2DD4BF]" />
@@ -200,7 +200,7 @@ export const HeroSection = ({ onOpenAuth }: HeroSectionProps) => {
                   </span>
                 </div>
                 <div className="space-y-4">
-                  <div className="bg-teal-900/40 rounded-xl rounded-tl-none p-3.5 border border-white/5">
+                  <div className="bg-teal-900/40 rounded-xl rounded-tl-none p-3.5 border-2 border-">
                     <p className="text-sm sm:text-base text-teal-50 font-medium">
                       いらっしゃいませ。何名様ですか？
                     </p>
@@ -227,7 +227,7 @@ export const HeroSection = ({ onOpenAuth }: HeroSectionProps) => {
                   ease: 'easeInOut',
                   delay: 1.5,
                 }}
-                className="absolute -bottom-20 -left-6 sm:-bottom-24 sm:-left-16 bg-white p-5 rounded-2xl shadow-lg shadow-teal-900/5 border border-teal-900/5 z-10 w-32 text-center hover:shadow-xl transition-shadow"
+                className="absolute -bottom-20 -left-6 sm:-bottom-24 sm:-left-16 bg-white p-5 rounded-2xl shadow-lg shadow-teal-900/5 border-2 border- z-10 w-32 text-center hover:shadow-xl transition-shadow"
               >
                 <div className="w-10 h-10 bg-teal-50 rounded-xl flex items-center justify-center mx-auto mb-3 text-teal-700 text-sm sm:text-base font-bold">
                   Kanji
