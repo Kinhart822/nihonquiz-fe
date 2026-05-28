@@ -33,7 +33,7 @@ export const ProgressChart: React.FC = () => {
         </div>
       </div>
 
-      <div className="flex-1 w-full h-[250px] mt-4">
+      <div className="flex-1 w-full min-h-[500px] mt-4">
         <ResponsiveContainer width="100%" height="100%">
           <BarChart
             data={data}

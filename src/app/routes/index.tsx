@@ -10,6 +10,7 @@ import HomePage from '../../features/home/pages/HomePage';
 import NotFoundPage from '../errors/NotFoundPage';
 import SettingsPage from '../../features/settings/pages/SettingsPage';
 import { PracticeSection } from '../../features/study/components/PracticeSection';
+import { NotebookPage } from '../../features/notebook/pages/NotebookPage';
 
 export const router = createBrowserRouter([
   {
@@ -55,6 +56,10 @@ export const router = createBrowserRouter([
   {
     path: '/settings',
     element: <SettingsPage />,
+  },
+  {
+    path: '/notebook',
+    element: <NotebookPage />,
   },
   {
     path: '/practice/chat',

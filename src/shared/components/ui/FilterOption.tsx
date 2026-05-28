@@ -8,12 +8,14 @@ export const FilterOption = ({
   children,
   defaultOpen = false,
   activeCount = 0,
+  onClear,
 }: {
   title: string;
   icon: any;
   children: React.ReactNode;
   defaultOpen?: boolean;
   activeCount?: number;
+  onClear?: () => void;
 }) => {
   const [isOpen, setIsOpen] = useState(defaultOpen);
 
@@ -39,10 +41,23 @@ export const FilterOption = ({
             </span>
           )}
         </div>
-        <ChevronDown
-          size={16}
-          className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
-        />
+        <div className="flex items-center gap-3">
+          {onClear && activeCount > 0 && (
+            <span
+              onClick={(e) => {
+                e.stopPropagation();
+                onClear();
+              }}
+              className="text-xs text-teal-600 hover:text-teal-800 dark:text-teal-400 dark:hover:text-teal-300 font-bold"
+            >
+              Xóa
+            </span>
+          )}
+          <ChevronDown
+            size={16}
+            className={`text-gray-400 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`}
+          />
+        </div>
       </button>
       <AnimatePresence>
         {isOpen && (

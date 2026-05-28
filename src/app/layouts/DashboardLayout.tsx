@@ -1,20 +1,21 @@
-import React, { useState } from 'react';
 import {
-  BookOpen,
-  User,
-  LogOut,
-  Menu,
-  X,
-  MessageSquare,
-  Home,
-  Settings,
   Bell,
+  BookMarked,
+  BookOpen,
   CheckCircle2,
   Flame,
+  Home,
+  LogOut,
+  Menu,
+  MessageSquare,
+  Settings,
+  User,
+  X,
 } from 'lucide-react';
+import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { NotificationsPanel } from '../../features/notifications/components/NotificationsPanel';
 import type { Notification } from '../../features/notifications/components/NotificationsPanel';
+import { NotificationsPanel } from '../../features/notifications/components/NotificationsPanel';
 
 interface DashboardLayoutProps {
   children: React.ReactNode;
@@ -168,6 +169,28 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             />
             <span className="text-[10px] font-bold leading-none text-center">
               Study
+            </span>
+          </Link>
+
+          <Link
+            to="/notebook"
+            className={`flex flex-col items-center justify-center gap-1.5 py-3 px-2 w-full rounded-2xl transition-all duration-300 group cursor-pointer ${
+              location.pathname.includes('/notebook')
+                ? 'bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-400 shadow-sm ring-1 ring-teal-100/50 dark:ring-teal-800/50 scale-100'
+                : 'text-gray-400 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-gray-600 dark:hover:text-slate-300 hover:scale-105'
+            }`}
+          >
+            <BookMarked
+              size={22}
+              strokeWidth={location.pathname.includes('/notebook') ? 2.5 : 2}
+              className={`transition-transform duration-300 ${
+                location.pathname.includes('/notebook')
+                  ? 'scale-110'
+                  : 'group-hover:scale-110'
+              }`}
+            />
+            <span className="text-[10px] font-bold leading-none text-center">
+              Notebook
             </span>
           </Link>
 
