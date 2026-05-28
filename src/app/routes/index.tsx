@@ -1,16 +1,19 @@
 import { createBrowserRouter, Navigate } from 'react-router-dom';
 import DashboardHomePage from '../../features/dashboard/pages/DashboardHomePage';
-import StudyPage from '../../features/study/pages/StudyPage';
-import { VocabularySection } from '../../features/study/components/VocabularySection';
+import HomePage from '../../features/home/pages/HomePage';
+import { NotebookPage } from '../../features/notebook/pages/NotebookPage';
+import ChatPracticePage from '../../features/practice/pages/ChatPracticePage';
+import SettingsPage from '../../features/settings/pages/SettingsPage';
 import { GrammarSection } from '../../features/study/components/GrammarSection';
 import { KanjiSection } from '../../features/study/components/KanjiSection';
-import { HomeLayout } from '../layouts/HomeLayout';
-import ChatPracticePage from '../../features/practice/pages/ChatPracticePage';
-import HomePage from '../../features/home/pages/HomePage';
-import NotFoundPage from '../errors/NotFoundPage';
-import SettingsPage from '../../features/settings/pages/SettingsPage';
 import { PracticeSection } from '../../features/study/components/PracticeSection';
-import { NotebookPage } from '../../features/notebook/pages/NotebookPage';
+import { VocabularySection } from '../../features/study/components/VocabularySection';
+import { PracticeDetailPage } from '../../features/study/pages/PracticeDetailPage';
+import { PracticeResultPage } from '../../features/study/pages/PracticeResultPage';
+import { PracticeTestPage } from '../../features/study/pages/PracticeTestPage';
+import StudyPage from '../../features/study/pages/StudyPage';
+import NotFoundPage from '../errors/NotFoundPage';
+import { HomeLayout } from '../layouts/HomeLayout';
 
 export const router = createBrowserRouter([
   {
@@ -60,6 +63,18 @@ export const router = createBrowserRouter([
   {
     path: '/notebook',
     element: <NotebookPage />,
+  },
+  {
+    path: '/practice-test/:id/detail',
+    element: <PracticeDetailPage />,
+  },
+  {
+    path: '/practice-test/:id/play',
+    element: <PracticeTestPage />,
+  },
+  {
+    path: '/practice-test/:id/result',
+    element: <PracticeResultPage />,
   },
   {
     path: '/practice/chat',

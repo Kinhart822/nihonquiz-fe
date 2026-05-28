@@ -1,5 +1,6 @@
 import { CheckCircle2, Play, RotateCcw } from 'lucide-react';
 import React from 'react';
+import { useNavigate } from 'react-router-dom';
 import type { PracticeExercise } from '../mock/mockPractice';
 
 interface PracticeCardProps {
@@ -7,6 +8,8 @@ interface PracticeCardProps {
 }
 
 export const PracticeCard: React.FC<PracticeCardProps> = ({ exercise }) => {
+  const navigate = useNavigate();
+
   const progressPercent = Math.round(
     (exercise.completedQuestions / exercise.totalQuestions) * 100,
   );
@@ -42,7 +45,10 @@ export const PracticeCard: React.FC<PracticeCardProps> = ({ exercise }) => {
   };
 
   return (
-    <div className="group bg-white dark:bg-slate-900 rounded-2xl p-6 border border-teal-100/50 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-teal-300 dark:hover:border-teal-700 transition-all duration-300 flex flex-col h-full cursor-pointer relative overflow-hidden">
+    <div
+      onClick={() => navigate(`/practice-test/${exercise.id}/detail`)}
+      className="group bg-white dark:bg-slate-900 rounded-2xl p-6 border border-teal-100/50 dark:border-slate-800 shadow-sm hover:shadow-xl hover:border-teal-300 dark:hover:border-teal-700 transition-all duration-300 flex flex-col h-full cursor-pointer relative overflow-hidden"
+    >
       {/* Decorative gradient blob on hover */}
       <div className="absolute -right-12 -top-12 w-32 h-32 bg-teal-500/10 dark:bg-teal-400/5 rounded-full blur-2xl group-hover:scale-150 transition-transform duration-500 pointer-events-none"></div>
 
