@@ -3,6 +3,9 @@ import { DashboardLayout } from '../../../app/layouts/DashboardLayout';
 import { StatsGrid } from '../components/StatsGrid';
 import { ProgressChart } from '../components/ProgressChart';
 import { DailyGoalCard } from '../components/DailyGoalCard';
+import { AssignmentsDueCard } from '../components/AssignmentsDueCard';
+import { AnnouncementsCard } from '../components/AnnouncementsCard';
+import { ClassOverviewCard } from '../components/ClassOverviewCard';
 
 export const DashboardHomePage: React.FC = () => {
   return (
@@ -18,6 +21,18 @@ export const DashboardHomePage: React.FC = () => {
         </div>
 
         <StatsGrid />
+
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 mb-6">
+          <div className="lg:col-span-1">
+            <AssignmentsDueCard />
+          </div>
+          <div className="lg:col-span-1">
+            <AnnouncementsCard />
+          </div>
+          <div className="lg:col-span-1">
+            <ClassOverviewCard />
+          </div>
+        </div>
 
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
           <div className="lg:col-span-1">

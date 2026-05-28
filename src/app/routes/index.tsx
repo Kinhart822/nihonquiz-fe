@@ -14,6 +14,9 @@ import { PracticeTestPage } from '../../features/study/pages/PracticeTestPage';
 import StudyPage from '../../features/study/pages/StudyPage';
 import NotFoundPage from '../errors/NotFoundPage';
 import { HomeLayout } from '../layouts/HomeLayout';
+import ClassesPage from '../../features/classes/pages/ClassesPage';
+import AssignmentsPage from '../../features/assignments/pages/AssignmentsPage';
+import MessagesPage from '../../features/messages/pages/MessagesPage';
 
 export const router = createBrowserRouter([
   {
@@ -57,12 +60,28 @@ export const router = createBrowserRouter([
     ],
   },
   {
-    path: '/settings',
-    element: <SettingsPage />,
+    path: '/study',
+    element: <StudyPage />,
+  },
+  {
+    path: '/classes',
+    element: <ClassesPage />,
+  },
+  {
+    path: '/assignments',
+    element: <AssignmentsPage />,
+  },
+  {
+    path: '/messages',
+    element: <MessagesPage />,
   },
   {
     path: '/notebook',
     element: <NotebookPage />,
+  },
+  {
+    path: '/settings',
+    element: <SettingsPage />,
   },
   {
     path: '/practice-test/:id/detail',

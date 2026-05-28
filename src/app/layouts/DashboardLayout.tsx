@@ -6,6 +6,9 @@ import {
   Flame,
   Home,
   LogOut,
+  GraduationCap,
+  ClipboardList,
+  MessageCircle,
   Menu,
   MessageSquare,
   Settings,
@@ -151,6 +154,28 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           </Link>
 
           <Link
+            to="/classes"
+            className={`flex flex-col items-center justify-center gap-1.5 py-3 px-2 w-full rounded-2xl transition-all duration-300 group cursor-pointer ${
+              location.pathname.includes('/classes')
+                ? 'bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-400 shadow-sm ring-1 ring-teal-100/50 dark:ring-teal-800/50 scale-100'
+                : 'text-gray-400 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-gray-600 dark:hover:text-slate-300 hover:scale-105'
+            }`}
+          >
+            <GraduationCap
+              size={22}
+              strokeWidth={location.pathname.includes('/classes') ? 2.5 : 2}
+              className={`transition-transform duration-300 ${
+                location.pathname.includes('/classes')
+                  ? 'scale-110'
+                  : 'group-hover:scale-110'
+              }`}
+            />
+            <span className="text-[10px] font-bold leading-none text-center">
+              Classes
+            </span>
+          </Link>
+
+          <Link
             to="/study"
             className={`flex flex-col items-center justify-center gap-1.5 py-3 px-2 w-full rounded-2xl transition-all duration-300 group cursor-pointer ${
               location.pathname.includes('/study')
@@ -173,6 +198,29 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
           </Link>
 
           <Link
+            to="/assignments"
+            className={`relative flex flex-col items-center justify-center gap-1.5 py-3 px-2 w-full rounded-2xl transition-all duration-300 group cursor-pointer ${
+              location.pathname.includes('/assignments')
+                ? 'bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-400 shadow-sm ring-1 ring-teal-100/50 dark:ring-teal-800/50 scale-100'
+                : 'text-gray-400 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-gray-600 dark:hover:text-slate-300 hover:scale-105'
+            }`}
+          >
+            <div className="absolute top-1 right-2 w-3 h-3 bg-red-500 rounded-full border-2 border-white dark:border-slate-900"></div>
+            <ClipboardList
+              size={22}
+              strokeWidth={location.pathname.includes('/assignments') ? 2.5 : 2}
+              className={`transition-transform duration-300 ${
+                location.pathname.includes('/assignments')
+                  ? 'scale-110'
+                  : 'group-hover:scale-110'
+              }`}
+            />
+            <span className="text-[10px] font-bold leading-none text-center truncate w-full">
+              Tasks
+            </span>
+          </Link>
+
+          <Link
             to="/notebook"
             className={`flex flex-col items-center justify-center gap-1.5 py-3 px-2 w-full rounded-2xl transition-all duration-300 group cursor-pointer ${
               location.pathname.includes('/notebook')
@@ -191,6 +239,31 @@ export const DashboardLayout: React.FC<DashboardLayoutProps> = ({
             />
             <span className="text-[10px] font-bold leading-none text-center">
               Notebook
+            </span>
+          </Link>
+
+          <Link
+            to="/messages"
+            className={`relative flex flex-col items-center justify-center gap-1.5 py-3 px-2 w-full rounded-2xl transition-all duration-300 group cursor-pointer ${
+              location.pathname.includes('/messages')
+                ? 'bg-teal-50 dark:bg-teal-900/40 text-teal-700 dark:text-teal-400 shadow-sm ring-1 ring-teal-100/50 dark:ring-teal-800/50 scale-100'
+                : 'text-gray-400 dark:text-slate-500 hover:bg-gray-50 dark:hover:bg-slate-800 hover:text-gray-600 dark:hover:text-slate-300 hover:scale-105'
+            }`}
+          >
+            <div className="absolute top-1 right-2 w-4 h-4 bg-teal-500 text-white text-[9px] font-bold rounded-full border-2 border-white dark:border-slate-900 flex items-center justify-center">
+              2
+            </div>
+            <MessageCircle
+              size={22}
+              strokeWidth={location.pathname.includes('/messages') ? 2.5 : 2}
+              className={`transition-transform duration-300 ${
+                location.pathname.includes('/messages')
+                  ? 'scale-110'
+                  : 'group-hover:scale-110'
+              }`}
+            />
+            <span className="text-[10px] font-bold leading-none text-center truncate w-full">
+              Inbox
             </span>
           </Link>
 
